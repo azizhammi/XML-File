@@ -1,0 +1,93 @@
+<log>
+
+  <object-types>
+    <object-type name="Rental">
+      <attributes>
+        <attribute name="status" type="string"/>
+      </attributes>
+    </object-type>
+    <object-type name="Customer">
+      <attributes>
+        <attribute name="membership" type="string"/>
+      </attributes>
+    </object-type>
+    <object-type name="Car">
+      <attributes>
+        <attribute name="condition" type="string"/>
+      </attributes>
+    </object-type>
+  </object-types>
+  
+  <event-types>
+    <event-type name="Rental Booked">
+      <attributes/>
+    </event-type>
+    <event-type name="Car Picked Up">
+      <attributes/>
+    </event-type>
+    <event-type name="Car Returned">
+      <attributes/>
+    </event-type>
+    <event-type name="Payment Processed">
+      <attributes/>
+    </event-type>
+  </event-types>
+  
+  <objects>
+    <object id="Rent" type="Rental">
+      <attributes>
+        <attribute name="status" time="2024-11-15T00:00:00.000+00:00">Booked</attribute>
+        <attribute name="status" time="2024-11-16T00:00:00.000+00:00">Active</attribute>
+        <attribute name="status" time="2024-11-19T00:00:00.000+00:00">Completed</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="Meier" qualifier="Customer of rental"/>
+        <relationship object-id="Mercedes" qualifier="Car assigned"/>
+      </objects>
+    </object>
+
+    <object id="Meier" type="Customer">
+      <attributes>
+        <attribute name="membership" time="1970-01-01T00:00:00.000+00:00">Gold</attribute>
+      </attributes>
+    </object>
+
+    <object id="Mercedes" type="Car">
+      <attributes>
+        <attribute name="condition" time="1970-01-01T00:00:00.000+00:00">Excellent</attribute>
+        <attribute name="condition" time="2024-11-19T00:00:00.000+00:00">Good</attribute>
+      </attributes>
+    </object>
+  </objects>
+  
+  <events>
+    <event id="e1" type="Rental Booked" time="2024-11-15T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="Rent" qualifier="Rental created"/>
+        <relationship object-id="Meier" qualifier="Customer books rental"/>
+      </objects>
+    </event>
+    
+    <event id="e2" type="Car Picked Up" time="2024-11-16T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="Rent" qualifier="Rental starts"/>
+        <relationship object-id="Mercedes" qualifier="Car picked up"/>
+      </objects>
+    </event>
+    
+    <event id="e3" type="Car Returned" time="2024-11-19T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="Rent" qualifier="Rental ends"/>
+        <relationship object-id="Mercedes" qualifier="Car returned"/>
+      </objects>
+    </event>
+
+    <event id="e4" type="Payment Processed" time="2024-11-19T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="Rent" qualifier="Payment for rental"/>
+        <relationship object-id="Meier" qualifier="Customer pays"/>
+      </objects>
+    </event>
+  </events>
+  
+</log>
