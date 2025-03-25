@@ -35,7 +35,6 @@
   </event-types>
   
   <objects>
-    <!-- Original Rental -->
     <object id="R1" type="Rental">
       <attributes>
         <attribute name="status" time="2024-11-15T00:00:00.000+00:00">Booked</attribute>
