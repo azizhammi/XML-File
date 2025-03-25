@@ -1,0 +1,218 @@
+<log>
+
+  <object-types>
+    <object-type name="Rental">
+      <attributes>
+        <attribute name="status" type="string"/>
+      </attributes>
+    </object-type>
+    <object-type name="Customer">
+      <attributes>
+        <attribute name="Name" type="string"/>
+        <attribute name="membership" type="string"/>
+      </attributes>
+    </object-type>
+    <object-type name="Car">
+      <attributes>
+        <attribute name="Brand" type="string"/>
+        <attribute name="condition" type="string"/>
+      </attributes>
+    </object-type>
+  </object-types>
+  
+  <event-types>
+    <event-type name="Rental Booked">
+      <attributes/>
+    </event-type>
+    <event-type name="Car Picked Up">
+      <attributes/>
+    </event-type>
+    <event-type name="Car Returned">
+      <attributes/>
+    </event-type>
+    <event-type name="Payment Processed">
+    </event-type>
+  </event-types>
+  
+  <objects>
+    <!-- Original Rental -->
+    <object id="R1" type="Rental">
+      <attributes>
+        <attribute name="status" time="2024-11-15T00:00:00.000+00:00">Booked</attribute>
+        <attribute name="status" time="2024-11-16T00:00:00.000+00:00">Active</attribute>
+        <attribute name="status" time="2024-11-19T00:00:00.000+00:00">Completed</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="CU1" qualifier="Customer of rental"/>
+        <relationship object-id="C1" qualifier="Car assigned"/>
+      </objects>
+    </object>
+
+    <object id="CU1" type="Customer">
+      <attributes>
+        <attribute name="Name" time="1970-01-01T00:00:00.000+00:00">Meier</attribute>
+        <attribute name="membership" time="1970-01-01T00:00:00.000+00:00">Gold</attribute>
+      </attributes>
+    </object>
+
+    <object id="C1" type="Car">
+      <attributes>
+        <attribute name="Brand" time="1970-01-01T00:00:00.000+00:00">Mercedes</attribute>
+        <attribute name="condition" time="1970-01-01T00:00:00.000+00:00">Excellent</attribute>
+        <attribute name="condition" time="2024-11-19T00:00:00.000+00:00">Good</attribute>
+      </attributes>
+    </object>
+
+    <object id="R2" type="Rental">
+      <attributes>
+        <attribute name="status" time="2024-11-16T00:00:00.000+00:00">Booked</attribute>
+        <attribute name="status" time="2024-11-17T00:00:00.000+00:00">Active</attribute>
+        <attribute name="status" time="2024-11-18T00:00:00.000+00:00">Completed</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="CU2" qualifier="Customer of rental"/>
+        <relationship object-id="C2" qualifier="Car assigned"/>
+      </objects>
+    </object>
+
+    <object id="CU2" type="Customer">
+      <attributes>
+        <attribute name="Name" time="1970-01-01T00:00:00.000+00:00">Schneider</attribute>
+        <attribute name="membership" time="1970-01-01T00:00:00.000+00:00">Silver</attribute>
+      </attributes>
+    </object>
+
+    <object id="C2" type="Car">
+      <attributes>
+        <attribute name="Brand" time="1970-01-01T00:00:00.000+00:00">Volvo</attribute>
+        <attribute name="condition" time="1970-01-01T00:00:00.000+00:00">Excelent</attribute>
+        <attribute name="condition" time="2024-11-18T00:00:00.000+00:00">Damaged</attribute>
+      </attributes>
+    </object>
+
+    <object id="R3" type="Rental">
+      <attributes>
+        <attribute name="status" time="2024-11-17T00:00:00.000+00:00">Booked</attribute>
+        <attribute name="status" time="2024-11-17T00:00:00.000+00:00">Active</attribute>
+        <attribute name="status" time="2024-11-19T00:00:00.000+00:00">Completed</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="CU3" qualifier="Customer of rental"/>
+        <relationship object-id="C3" qualifier="Car assigned"/>
+      </objects>
+    </object>
+
+    <object id="CU3" type="Customer">
+      <attributes>
+        <attribute name="Name" time="1970-01-01T00:00:00.000+00:00">Müller</attribute>
+        <attribute name="membership" time="1970-01-01T00:00:00.000+00:00">Diamond</attribute>
+      </attributes>
+    </object>
+
+    <object id="C3" type="Car">
+      <attributes>
+        <attribute name="Brand" time="1970-01-01T00:00:00.000+00:00">Mercedes</attribute>
+        <attribute name="condition" time="1970-01-01T00:00:00.000+00:00">Excellent</attribute>
+        <attribute name="condition" time="2024-11-19T00:00:00.000+00:00">Damaged</attribute>
+      </attributes>
+    </object>
+
+  </objects>
+  
+  <events>
+    <event id="e1" type="Rental Booked" time="2024-11-15T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R1" qualifier="Rental created"/>
+        <relationship object-id="CU1" qualifier="Customer books rental"/>
+      </objects>
+    </event>
+    
+    <event id="e2" type="Car Picked Up" time="2024-11-16T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R1" qualifier="Rental starts"/>
+        <relationship object-id="C1" qualifier="Car picked up"/>
+      </objects>
+    </event>
+    
+    <event id="e3" type="Car Returned" time="2024-11-19T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R1" qualifier="Rental ends"/>
+        <relationship object-id="C1" qualifier="Car returned"/>
+      </objects>
+    </event>
+
+    <event id="e4" type="Payment Processed" time="2024-11-19T00:00:00.000+00:00">
+      <attributes>
+        <attribute name="Amount" time="1970-01-01T00:00:00.000+00:00">450.00</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="R1" qualifier="Payment for rental"/>
+        <relationship object-id="CU1" qualifier="Customer pays"/>
+      </objects>
+    </event>
+
+    <event id="e5" type="Rental Booked" time="2024-11-16T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R2" qualifier="Rental created"/>
+        <relationship object-id="CU2" qualifier="Customer books rental"/>
+      </objects>
+    </event>
+    
+    <event id="e6" type="Car Picked Up" time="2024-11-17T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R2" qualifier="Rental starts"/>
+        <relationship object-id="C2" qualifier="Car picked up"/>
+      </objects>
+    </event>
+    
+    <event id="e7" type="Car Returned" time="2024-11-18T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R2" qualifier="Rental ends"/>
+        <relationship object-id="C2" qualifier="Car returned"/>
+      </objects>
+    </event>
+
+    <event id="e8" type="Payment Processed" time="2024-11-18T00:00:00.000+00:00">
+      <attributes>
+        <attribute name="Amount" time="1970-01-01T00:00:00.000+00:00">150.00</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="R2" qualifier="Payment for rental"/>
+        <relationship object-id="CU2" qualifier="Customer pays"/>
+      </objects>
+    </event>
+
+    <event id="e9" type="Rental Booked" time="2024-11-17T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R3" qualifier="Rental created"/>
+        <relationship object-id="CU3" qualifier="Customer books rental"/>
+      </objects>
+    </event>
+    
+    <event id="e10" type="Car Picked Up" time="2024-11-17T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R3" qualifier="Rental starts"/>
+        <relationship object-id="C3" qualifier="Car picked up"/>
+      </objects>
+    </event>
+    
+    <event id="e11" type="Car Returned" time="2024-11-19T00:00:00.000+00:00">
+      <objects>
+        <relationship object-id="R3" qualifier="Rental ends"/>
+        <relationship object-id="C3" qualifier="Car returned"/>
+      </objects>
+    </event>
+
+    <event id="e12" type="Payment Processed" time="2024-11-19T00:00:00.000+00:00">
+      <attributes>
+        <attribute name="Amount" time="1970-01-01T00:00:00.000+00:00">350.00</attribute>
+      </attributes>
+      <objects>
+        <relationship object-id="R3" qualifier="Payment for rental"/>
+        <relationship object-id="CU3" qualifier="Customer pays"/>
+      </objects>
+    </event>
+
+  </events>
+  
+</log>
