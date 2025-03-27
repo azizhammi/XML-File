@@ -3,68 +3,23 @@
         {
             "relationships": [{
                 "qualifier": "Car assigned",
-                "objectId": "C2"
-            }],
-            "attributes": [
-                {
-                    "name": "status",
-                    "time": "Sun Nov 17 01:00:00 CET 2024",
-                    "value": "Active"
-                },
-                {
-                    "name": "status",
-                    "time": "Mon Nov 18 01:00:00 CET 2024",
-                    "value": "Completed"
-                },
-                {
-                    "name": "status",
-                    "time": "Sat Nov 16 01:00:00 CET 2024",
-                    "value": "Booked"
-                }
-            ],
-            "id": "R2",
-            "type": "Rental"
-        },
-        {
-            "relationships": [{
-                "qualifier": "Car assigned",
-                "objectId": "R2"
-            }],
-            "attributes": [
-                {
-                    "name": "Brand",
-                    "time": "Thu Jan 01 01:00:00 CET 1970",
-                    "value": "Volvo"
-                },
-                {
-                    "name": "condition",
-                    "time": "Thu Jan 01 01:00:00 CET 1970",
-                    "value": "Excelent"
-                },
-                {
-                    "name": "condition",
-                    "time": "Mon Nov 18 01:00:00 CET 2024",
-                    "value": "Damaged"
-                }
-            ],
-            "id": "C2",
-            "type": "Car"
-        },
-        {
-            "relationships": [{
-                "qualifier": "Car assigned",
                 "objectId": "C3"
             }],
             "attributes": [
                 {
                     "name": "status",
-                    "time": "Sun Nov 17 01:00:00 CET 2024",
+                    "time": "2024-11-19T00:00:00Z",
+                    "value": "Completed"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-11-17T00:00:00Z",
                     "value": "Active"
                 },
                 {
                     "name": "status",
-                    "time": "Tue Nov 19 01:00:00 CET 2024",
-                    "value": "Completed"
+                    "time": "2024-11-16T00:00:00Z",
+                    "value": "Booked"
                 }
             ],
             "id": "R3",
@@ -73,22 +28,66 @@
         {
             "relationships": [{
                 "qualifier": "Car assigned",
-                "objectId": "R3"
+                "objectId": "C2"
             }],
             "attributes": [
                 {
+                    "name": "status",
+                    "time": "2024-11-18T00:00:00Z",
+                    "value": "Completed"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-11-17T00:00:00Z",
+                    "value": "Active"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-11-16T00:00:00Z",
+                    "value": "Booked"
+                }
+            ],
+            "id": "R2",
+            "type": "Rental"
+        },
+        {
+            "relationships": [],
+            "attributes": [
+                {
                     "name": "Brand",
-                    "time": "Thu Jan 01 01:00:00 CET 1970",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Volvo"
+                },
+                {
+                    "name": "condition",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Excelent"
+                },
+                {
+                    "name": "condition",
+                    "time": "2024-11-18T00:00:00Z",
+                    "value": "Damaged"
+                }
+            ],
+            "id": "C2",
+            "type": "Car"
+        },
+        {
+            "relationships": [],
+            "attributes": [
+                {
+                    "name": "Brand",
+                    "time": "1970-01-01T00:00:00Z",
                     "value": "Mercedes"
                 },
                 {
                     "name": "condition",
-                    "time": "Thu Jan 01 01:00:00 CET 1970",
+                    "time": "1970-01-01T00:00:00Z",
                     "value": "Excellent"
                 },
                 {
                     "name": "condition",
-                    "time": "Tue Nov 19 01:00:00 CET 2024",
+                    "time": "2024-11-19T00:00:00Z",
                     "value": "Damaged"
                 }
             ],
@@ -126,65 +125,65 @@
         {
             "relationships": [
                 {
-                    "qualifier": "Car returned",
-                    "objectId": "C3"
+                    "qualifier": "Rental starts",
+                    "objectId": "R3"
                 },
                 {
-                    "qualifier": "Rental ends",
-                    "objectId": "R3"
+                    "qualifier": "Car picked up",
+                    "objectId": "C3"
                 }
             ],
             "attributes": [],
-            "id": "e11",
-            "time": "Tue Nov 19 01:00:00 CET 2024",
+            "id": "e10",
+            "time": "2024-11-17T00:00:00Z",
+            "type": "Car Picked Up"
+        },
+        {
+            "relationships": [
+                {
+                    "qualifier": "Car picked up",
+                    "objectId": "C2"
+                },
+                {
+                    "qualifier": "Rental starts",
+                    "objectId": "R2"
+                }
+            ],
+            "attributes": [],
+            "id": "e6",
+            "time": "2024-11-17T00:00:00Z",
+            "type": "Car Picked Up"
+        },
+        {
+            "relationships": [
+                {
+                    "qualifier": "Car returned",
+                    "objectId": "C2"
+                },
+                {
+                    "qualifier": "Rental ends",
+                    "objectId": "R2"
+                }
+            ],
+            "attributes": [],
+            "id": "e7",
+            "time": "2024-11-18T00:00:00Z",
             "type": "Car Returned"
         },
         {
             "relationships": [
                 {
-                    "qualifier": "Car picked up",
-                    "objectId": "C3"
-                },
-                {
-                    "qualifier": "Rental starts",
-                    "objectId": "R3"
-                }
-            ],
-            "attributes": [],
-            "id": "e10",
-            "time": "Sun Nov 17 01:00:00 CET 2024",
-            "type": "Car Picked Up"
-        },
-        {
-            "relationships": [
-                {
-                    "qualifier": "Rental starts",
-                    "objectId": "R2"
-                },
-                {
-                    "qualifier": "Car picked up",
-                    "objectId": "C2"
-                }
-            ],
-            "attributes": [],
-            "id": "e6",
-            "time": "Sun Nov 17 01:00:00 CET 2024",
-            "type": "Car Picked Up"
-        },
-        {
-            "relationships": [
-                {
                     "qualifier": "Rental ends",
-                    "objectId": "R2"
+                    "objectId": "R3"
                 },
                 {
                     "qualifier": "Car returned",
-                    "objectId": "C2"
+                    "objectId": "C3"
                 }
             ],
             "attributes": [],
-            "id": "e7",
-            "time": "Mon Nov 18 01:00:00 CET 2024",
+            "id": "e11",
+            "time": "2024-11-19T00:00:00Z",
             "type": "Car Returned"
         }
     ]
