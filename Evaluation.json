@@ -125,12 +125,12 @@
         {
             "relationships": [
                 {
-                    "qualifier": "Rental starts",
-                    "objectId": "R3"
-                },
-                {
                     "qualifier": "Car picked up",
                     "objectId": "C3"
+                },
+                {
+                    "qualifier": "Rental starts",
+                    "objectId": "R3"
                 }
             ],
             "attributes": [],
@@ -141,12 +141,12 @@
         {
             "relationships": [
                 {
-                    "qualifier": "Car picked up",
-                    "objectId": "C2"
-                },
-                {
                     "qualifier": "Rental starts",
                     "objectId": "R2"
+                },
+                {
+                    "qualifier": "Car picked up",
+                    "objectId": "C2"
                 }
             ],
             "attributes": [],
@@ -157,12 +157,12 @@
         {
             "relationships": [
                 {
-                    "qualifier": "Car returned",
-                    "objectId": "C2"
-                },
-                {
                     "qualifier": "Rental ends",
                     "objectId": "R2"
+                },
+                {
+                    "qualifier": "Car returned",
+                    "objectId": "C2"
                 }
             ],
             "attributes": [],
@@ -173,12 +173,12 @@
         {
             "relationships": [
                 {
-                    "qualifier": "Rental ends",
-                    "objectId": "R3"
-                },
-                {
                     "qualifier": "Car returned",
                     "objectId": "C3"
+                },
+                {
+                    "qualifier": "Rental ends",
+                    "objectId": "R3"
                 }
             ],
             "attributes": [],
