@@ -91,7 +91,7 @@
 
     <object id="R3" type="Rental">
       <attributes>
-        <attribute name="status" time="2024-11-17T00:00:00.000+00:00">Booked</attribute>
+        <attribute name="status" time="2024-11-16T00:00:00.000+00:00">Booked</attribute>
         <attribute name="status" time="2024-11-17T00:00:00.000+00:00">Active</attribute>
         <attribute name="status" time="2024-11-19T00:00:00.000+00:00">Completed</attribute>
       </attributes>
@@ -181,7 +181,7 @@
       </objects>
     </event>
 
-    <event id="e9" type="Rental Booked" time="2024-11-17T00:00:00.000+00:00">
+    <event id="e9" type="Rental Booked" time="2024-11-16T00:00:00.000+00:00">
       <objects>
         <relationship object-id="R3" qualifier="Rental created"/>
         <relationship object-id="CU3" qualifier="Customer books rental"/>
